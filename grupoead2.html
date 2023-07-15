@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Aditivos Automotrices - Grupo EAD</title>
+  <style>
+    /* Estilos CSS para personalizar la apariencia de la tienda */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .logo {
+      width: 7em;
+      height: 4em;
+      margin-left: 0.5em;
+      float: left;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+    section {
+      padding: 20px;
+    }
+    .producto {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 10px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .producto img {
+      width: 40%;
+      margin-right: 20px;
+    }
+    .producto h3 {
+      margin-top: 0;
+      color: #333;
+      flex-grow: 1;
+      text-align: left;
+    }
+    .producto p {
+      margin-bottom: 0;
+      color: #666;
+      text-align: justify;
+      flex-grow: 1;
+      text-align: left;
+    }
+    button {
+      background-color: #e60000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #b30000;
+    }
+    .producto:hover {
+      transform: scale(1.1);
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Estilos CSS para el formulario */
+    .formulario-container {
+      display: none;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .formulario-container form {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .formulario-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .formulario-container input[type="text"],
+    .formulario-container input[type="number"],
+    .formulario-container input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .formulario-container button[type="submit"] {
+      background-color: #e60000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .formulario-container button[type="submit"]:hover {
+      background-color: #b30000;
+    }
+
+    /* Animaciones */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Estilos CSS para el logo de WhatsApp */
+    .whatsapp-logo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://scontent.fatf2-1.fna.fbcdn.net/v/t39.30808-6/359806826_813801306760843_8999693093622974036_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeE5g9vuUSy8JBfQlC-HmOidvTw9RLVQeji9PD1EtVB6OCeanY199qZCy3S3p5HrbQ-p5VrczjV4V1NxiZdO01zl&_nc_ohc=8bPF_fETldQAX_hgTm5&_nc_ht=scontent.fatf2-1.fna&oh=00_AfAjST6gNxQsjtunuPSRCaqGREegEUanCxgPz3MOP6uN4Q&oe=64B5395F" alt="Logo de la tienda" class="logo">
+    <h1>Tienda de Aditivos Automotrices - Grupo EAD</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bienvenido a nuestra tienda de aditivos automotrices</h2>
+    <p>Ofrecemos una amplia selección de aditivos para mejorar el rendimiento y cuidado de tu vehículo.</p>
+  </section>
+
+  <section id="productos">
+    <h2>Productos</h2>
+    <div class="producto">
+      <img src="https://www.senfineco.de/imgbank/Image/pic/Senfineco/9914.png" alt="Aditivo 1">
+      <div>
+        <h3 style="color: #333;">9914 Battery Clamp Grease</h3>
+        <p style="color: #666;">Grasa especial a base de jabón de cal compatible con plásticos. 
+          Protege los polos de la batería y los contactos eléctricos de la corrosión y la oxidación. 
+          Para un arranque seguro, una iluminación brillante y una mayor duración de la batería.</p>
+        <button onclick="mostrarFormulario('9914 Battery Clamp Grease')">Añadir al carrito</button>
+      </div>
+    </div>
+    <div class="producto">
+      <img src="https://www.senfineco.de/imgbank/Image/pic/Senfineco/9977_Spray_Grease.png" alt="Aditivo 2">
+      <div>
+        <h3 style="color: #333;">9977 Spray Grease</h3>
+        <p style="color: #666;">Grasa Blanca de Litio sintética, tiene excelentes propiedades en baja y alta temperatura, 
+          para cerraduras de puertas de automóviles, cadenas, capó y para cadenas de motocicletas. 
+          La capa suave formada de la grasa no pegajosa, se adhiere firmemente al punto de contacto,
+           reduce la fricción de las piezas y protege contra la suciedad, la entrada de agua, 
+           en invierno defiende la congelación de las piezas. Es extremadamente adhesivo, 
+           proporciona una protección confiable contra la corrosión y es estable durante el tiempo y presión.</p>
+        <button onclick="mostrarFormulario('9977 Spray Grease')">Añadir al carrito</button>
+      </div>
+    </div>
+    <div class="producto">
+      <img src="https://www.senfineco.de/imgbank/Image/pic/Senfineco/9997_FSystemCleaner.png" alt="Aditivo 3">
+      <div>
+        <h3 style="color: #333;">9997 MaxClean Fuel System</h3>
+        <p style="color: #666;">Limpiador del sistema de combustible es un producto profesional para todos los motores de gasolina. 
+          Compuestos químicos seleccionados permiten disolver todos los residuos y depósitos sólidos y pastosos en los sistemas de alimentación e inyección 
+          y protegerlos eficazmente contra la formación depósitos, contra el desgaste y la corrosión de nuevo. Mantiene el sistema de combustible limpio 
+          y mejora el rendimiento de la combustión. Reduce el consumo de combustible, elimina eficazmente partículas de agua en el estanque de combustible 
+          y evita daños por depósitos de carbono. Con el uso regular, se restaura el estado original de la sistema de alimentación e inyección. 
+          Representa una alternativa completa a la limpieza profesional de los inyectores, así como a los componentes de suministro de combustible. 
+          Restaura el rendimiento del motor y los parámetros de rendimiento de forma sostenible. Para uso profiláctico antes de repostar, rellene 300 ml de limpiador a 50 l de gasolina. 
+          Alternativa para problemas difíciles, utilice el FuelMaster 2002  equipo profesional, para obtener el efecto de limpieza inmediatamente.</p>
+        <button onclick="mostrarFormulario('9997 MaxClean Fuel System')">Añadir al carrito</button>
+      </div>
+    </div>
+    <div class="producto">
+      <img src="https://www.senfineco.de/imgbank/Image/pic/Senfineco/9971.png" alt="Aditivo 3">
+      <div>
+        <h3 style="color: #333;">9971 Engine Protect CeraMol</h3>
+        <p style="color: #666;">Es un aditivo altamente efectivo para aceites de motor que protege los segmentos de pistón y los taqués 
+          hidráulicos contra el desgaste y la corrosión debido a los residuos agresivos de la combustión del combustible. 
+          Aumenta la resistencia de las piezas detalladas del motor al desgaste y a la corrosión a altas temperaturas.</p>
+        <button onclick="mostrarFormulario('9971 Engine Protect CeraMol')">Añadir al carrito</button>
+      </div>
+    </div>
+    <!-- Puedes agregar más productos aquí -->
+  </section>
+
+  <section id="contacto" class="formulario-container">
+    <h2>Pedidos</h2>
+    <p>Si deseas adquirir algún producto, por favor completa la siguiente información y nos pondremos en contacto contigo de inmediato:</p>
+    <form>
+        <label for="nombreProducto">Nombre del producto:</label>
+      <input type="text" id="nombreProducto" name="nombreProducto" readonly required><br><br>
+
+      <label for="cantidad">Cantidad:</label>
+      <input type="number" id="cantidad" name="cantidad" required><br><br>
+
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required><br><br>
+
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required><br><br>
+
+      <label for="cedula">Cédula:</label>
+      <input type="text" id="cedula" name="cedula" required><br><br>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <a href="https://api.whatsapp.com/send/?phone=%2B593984647011&text=%C2%A1Hola%21+Estoy+interesad@+en+conocer+m%C3%A1s+acerca+de+sus+productos+de+aditivos.+%C2%BFPodr%C3%ADan+brindarme+informaci%C3%B3n+adicional%3F&type=phone_number&app_absent=0" target="_blank">
+      <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png" alt="Logo de WhatsApp" class="whatsapp-logo">
+    </a>
+  </footer>
+
+  <footer>
+    <p>Derechos de autor &copy; 2023 Grupo EAD - Tienda de Aditivos Automotrices. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function mostrarFormulario(producto) {
+      var formulario = document.querySelector('.formulario-container');
+      formulario.style.display = 'block';
+      document.getElementById('nombreProducto').value = producto;
+      location.href = '#contacto';
+    }
+  </script>
+</body>
+</html>
